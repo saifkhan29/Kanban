@@ -1,0 +1,97 @@
+// Fonts
+$font-family: 'Plus Jakarta Sans', sans-serif;
+$font-family-heading: 'Plus Jakarta Sans', sans-serif;
+
+// Color system
+$primary: #635FC7;
+$primary-hover: #A8A4FF;
+$secondary: #EA5555;
+$secondary-hover: #FF9898;
+$white: #FFFFFF;
+$black: #000112;
+$very-dark-grey: #20212C;
+$dark-grey: #2B2C37;
+$lines-dark: #3E3F4E;
+$lines-light: #E4EBFA;
+$medium-grey: #828FA3;
+$light-grey: #F4F7FD;
+$danger: #FE003A;
+$success: #00D959;
+$warning: #FECD00;
+
+// Grid breakpoints
+$custom-breakpoints: (
+	bigphone: 416px
+);
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+	xxxl: 1600px
+);
+
+
+// Grid containers
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1290px,
+	xxxl: 1550px
+);
+
+
+// Grid columns
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-row-columns: 6;
+
+
+// Utilities
+$displays: none, inline, inline-block, block, flex, inline-flex;
+
+
+// CSS Vars
+:root {
+	--default-vh: 100vh;
+	--default-vw: 100vw;
+	
+	// Section
+	--section-outer-gutter: 1.6rem;
+	--section-inner-gutter: 0.6rem;
+	--section-gutter: calc(var(--section-outer-gutter) + var(--section-inner-gutter));
+	--section-radius: 2rem;
+	--x-fullscreen-offset: calc(var(--section-gutter) + 15px);
+	
+	// Form elements
+	--input-radius: 1rem;
+	--input-radius-xs: 2rem;
+	--input-pad-y: 4rem;
+	--input-pad-x: 3.6rem;
+	--btn-pad-y: 1.1rem;
+	--btn-pad-x: 3.2rem;
+	
+	
+	// Media Queries
+	@media (min-width: #{map-get($custom-breakpoints, bigphone)}) {
+		// Section
+		--section-inner-gutter: 1.6rem;
+	}
+	@include media-breakpoint-up(lg) {
+		// Section
+		--section-outer-gutter: 1.5rem;
+		
+		// Form elements
+		--input-radius: 0.8rem;
+		--input-radius-xs: 1rem;
+		--input-pad-y: 2rem;
+		--input-pad-x: 1.8rem;
+		--input-pad-xs: 2.142rem 2rem;
+		--btn-pad-y: 0.66rem;
+		--btn-pad-x: 1.6rem;
+	}
+}

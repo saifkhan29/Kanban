@@ -1,0 +1,66 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+html {
+	display: flex;
+    flex-direction: column;
+	min-height: 100%;
+}
+body {
+	position: relative;
+	flex: 1;
+	font-family: $font-family;
+	font-size: 3rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	color: $black;
+	-webkit-font-smoothing: subpixel-antialiased;
+	width: 100%;
+	overflow-x: hidden;
+	
+	// Media Queries
+	@include media-breakpoint-up(lg) {
+		font-size: 1.5rem;
+	}
+}
+
+html {
+	font-size: 5px;
+	// NOTE: To prevent raster image blur
+	// image-rendering: -moz-crisp-edges;
+    // image-rendering: -o-crisp-edges;
+    // image-rendering: -webkit-optimize-contrast;
+    // image-rendering: crisp-edges;
+    // -ms-interpolation-mode: nearest-neighbor;
+	
+	// Media Queries
+	@include media-breakpoint-up(md) {
+		font-size: 5.5px;
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 6.25px;
+	}
+	@include media-breakpoint-up(xl) {
+		font-size: 7px;
+	}
+	@include media-breakpoint-up(xxl) {
+		font-size: 8.5px;
+	}
+	// TODO: Remove for scaling down to proportion
+	@include media-breakpoint-up(xxxl) {
+		// font-size: 9px;
+		font-size: 10px;
+	}
+}
+
+.kill-scroll,
+.kill-scroll body {
+	overflow: hidden !important;
+	
+	// Media Queries
+	@include media-breakpoint-down(sm) {
+		height: calc(var(--default-vh) - 1px) !important;
+	}
+}

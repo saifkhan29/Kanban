@@ -1,0 +1,34 @@
+.section {
+	--section-bg: #{$white};
+
+	position: relative;
+	background: var(--section-bg);
+	padding: 12rem var(--section-gutter);
+	z-index: 1;
+	
+	&.section--boxed {
+		background: transparent;
+		padding: var(--section-outer-gutter) var(--section-outer-gutter);
+	}
+	
+	&.section--py0 {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	&.section--pt0 {
+		padding-top: 0;
+	}
+	&.section--pb0 {
+		padding-bottom: 0;
+	}
+}
+
+// Use this when using .section--boxed to get inner box
+.section-inner {
+	position: relative;
+	background: var(--section-bg);
+	padding: 12rem var(--section-inner-gutter);
+	border-radius: var(--section-radius);
+	overflow: hidden;
+}
+

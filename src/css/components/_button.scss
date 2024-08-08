@@ -1,0 +1,85 @@
+.btn {
+	--btn-color: #{$white};
+	--btn-background: #{$primary};
+
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+	font-family: $font-family-heading;
+	font-stretch: 125%;
+	font-weight: 500;
+	color: var(--btn-color);
+	background-color: var(--btn-background);
+	text-align: center;
+	text-transform: uppercase;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	border: 1px solid var(--btn-color);
+	padding: 0.8rem 2.8rem;
+	border-radius: 20rem;
+	
+	// Media Queries
+	@include media-breakpoint-up(lg) {
+		font-size: 1.3rem;
+	}
+
+	&:hover,
+	&:focus-visible {
+		--btn-background: #{$primary-hover};
+	}
+	
+	&:hover,
+	&:focus {
+		outline: 0;
+		text-decoration: none;
+	}
+
+	&.disabled,
+	&:disabled {
+		opacity: 0.65;
+		pointer-events: none;
+	}
+
+	// Colors
+	&.btn--secondary {
+		--btn-background: #{$secondary};
+
+		&:hover,
+		&:focus-visible {
+			--btn-background: #{$secondary-hover};
+		}
+	}
+
+	&.btn--outline {
+		--btn-background: #{$light-grey};
+
+		--btn-color: #{$primary};
+		
+		&:hover,
+		&:focus-visible {
+			--btn-background: #{$lines-light};
+		}
+	}
+
+	// Sizes
+	&.btn--lg {
+		font-size: 3rem;
+	
+		// Media Queries
+		@include media-breakpoint-up(lg) {
+			font-size: 1.5rem;
+		}
+	}
+	&.btn--xs {
+		font-size: 2.4rem;
+	
+		// Media Queries
+		@include media-breakpoint-up(lg) {
+			font-size: 1.4rem;
+		}
+	}
+}
+

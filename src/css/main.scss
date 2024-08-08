@@ -1,0 +1,39 @@
+// // Fonts
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src:
+        url('../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('woff2 supports variations'),
+        url('../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('woff2-variations');
+    font-weight: 200 900;
+    font-display: swap;
+    font-stretch: 75% 125%;
+}
+
+// // Bootstrap
+@import "functions";
+@import "mixins";
+@import "variables";
+@import "reboot";
+@import "grid";
+@import "utilities";
+
+// // Components
+@import "components/button";
+@import "components/typography";
+@import "components/form";
+@import "components/accordion";
+
+// // Layouts
+@import "layouts/navbar";
+@import "layouts/section";
+@import "layouts/footer";
+
+// // Sections
+
+
+// // Pages
+
+
+// // Custom
+// @import "animation.scss";
+@import "custom.scss";

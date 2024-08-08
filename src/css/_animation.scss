@@ -1,0 +1,271 @@
+:root {
+	// Reveal animation
+	--reveal-duration: 1s;
+	--reveal-delay: 0.2s;
+	--reveal-stagger: 0.2s;
+
+	// Tape animation
+    --wipe-left: inset(0 100% 0 0);
+    --wipe-in: inset(0 0 0 0);
+}
+
+.hero[data-animated] {
+	.hero__heading,
+	.hero__subheading,
+	.hero__bg,
+	.hero__para,
+	.hero__cta,
+	.hero__cards aside,
+	.hero__domains ul li {
+		// NOTE: Hidden at the start
+		opacity: 0;
+		transform: translate3d(0, 5rem, 0);
+		transition: opacity var(--reveal-duration) var(--reveal-delay) cubic-bezier(0, 0, 0, 1), 
+					transform var(--reveal-duration) var(--reveal-delay) cubic-bezier(0, 0, 0, 1);
+	}
+
+	.hero__bg {
+		// NOTE: Stagger reveal
+		transition-timing-function: ease-in-out;
+	}
+
+	.hero__para,
+	.hero__cta {
+		// NOTE: Stagger reveal
+		transition-delay: calc(var(--reveal-delay) + calc(var(--reveal-stagger) * 3)) !important;
+	}
+
+	.hero__cards {
+		aside {
+			@for $i from 1 through 3 {
+				&:nth-child(#{$i}) {
+					// NOTE: Stagger reveal
+					transition-delay: calc(var(--reveal-delay) + var(--reveal-stagger) * (($i*0.8) + 3)) !important;
+				}
+			}
+		}
+	}
+
+	.hero__domains {
+		$nth: 6;
+
+		span {
+			// NOTE: Hidden at the start
+			opacity: 0;
+			transition: opacity var(--reveal-duration) calc(var(--reveal-delay) + var(--reveal-stagger) * $nth) cubic-bezier(0, 0, 0, 1);
+		}
+
+		ul li {
+			@for $i from 1 through 11 {
+				&:nth-child(#{$i}) {
+					// NOTE: Stagger reveal
+					transition-delay: calc(var(--reveal-delay) + var(--reveal-stagger) * (($i*0.5) + $nth)) !important;
+				}
+			}
+		}
+	}
+	
+	&.animated {
+		.hero__heading,
+		.hero__subheading,
+		.hero__bg,
+		.hero__para,
+		.hero__cta,
+		.hero__cards aside,
+		.hero__domains span,
+		.hero__domains ul li  {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
+[data-animated="hero"] {
+	[data-animated-reveal] {
+		// NOTE: Hidden at the start
+		opacity: 0;
+		transform: translate3d(0, 5rem, 0);
+		transition: opacity var(--reveal-duration) cubic-bezier(0, 0, 0, 1), 
+					transform var(--reveal-duration) cubic-bezier(0, 0, 0, 1);
+	}
+	
+	@for $i from 1 through 10 {
+		[data-animated-reveal="#{$i}"] {
+			// NOTE: Stagger reveal
+			transition-delay: calc((var(--reveal-delay) * ($i - 1)) + var(--reveal-stagger) * ($i - 1)) !important;
+		}
+	}
+	
+	&.animated {
+		[data-animated-reveal] {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
+.section[data-animated="inner"] {
+	.section-inner {
+		// NOTE: Offset at the start
+		transform: translate3d(0, 25vh, 0);
+		transition: transform var(--reveal-duration) cubic-bezier(0, 0, 0, 1);
+	}
+	
+	[data-animated-reveal] {
+		// NOTE: Hidden at the start
+		opacity: 0;
+		transform: translate3d(0, 5rem, 0);
+		transition: opacity var(--reveal-duration) var(--reveal-delay) cubic-bezier(0, 0, 0, 1), 
+					transform var(--reveal-duration) var(--reveal-delay) cubic-bezier(0, 0, 0, 1);
+	}
+	
+	@for $i from 2 through 10 {
+		[data-animated-reveal="#{$i}"] {
+			// NOTE: Stagger reveal
+			transition-delay: calc(var(--reveal-delay) + var(--reveal-stagger) * ($i - 1)) !important;
+		}
+	}
+	
+	&.animated {
+		.section-inner {
+			transform: translate3d(0, 0, 0);
+
+			&.reveal {
+				[data-animated-reveal] {
+					opacity: 1;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+		}
+	}
+}
+
+.section[data-animated="bg"] {
+	// NOTE: Offset at the start
+	transform: translate3d(0, 10vh, 0);
+	transition: transform var(--reveal-duration) cubic-bezier(0, 0, 0, 1);
+	
+	[data-animated-reveal] {
+		// NOTE: Hidden at the start
+		opacity: 0;
+		transform: translate3d(0, 5rem, 0);
+		transition: opacity var(--reveal-duration) var(--reveal-delay) cubic-bezier(0, 0, 0, 1), 
+					transform var(--reveal-duration) var(--reveal-delay) cubic-bezier(0, 0, 0, 1);
+	}
+	
+	@for $i from 2 through 10 {
+		[data-animated-reveal="#{$i}"] {
+			// NOTE: Stagger reveal
+			transition-delay: calc(var(--reveal-delay) + var(--reveal-stagger) * ($i - 1)) !important;
+		}
+	}
+	
+	&.animated {
+		transform: translate3d(0, 0, 0);
+
+		.reveal {
+			[data-animated-reveal] {
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+}
+
+.section[data-animated="transparent"] {
+	[data-animated-reveal] {
+		// NOTE: Hidden at the start
+		opacity: 0;
+		transform: translate3d(0, 5rem, 0);
+		transition: opacity var(--reveal-duration) cubic-bezier(0, 0, 0, 1), 
+					transform var(--reveal-duration) cubic-bezier(0, 0, 0, 1);
+	}
+	
+	@for $i from 2 through 10 {
+		[data-animated-reveal="#{$i}"] {
+			// NOTE: Stagger reveal
+			transition-delay: calc((var(--reveal-delay) * ($i - 1)) + var(--reveal-stagger) * ($i - 1)) !important;
+		}
+	}
+	
+	&.animated {
+		.reveal {
+			[data-animated-reveal] {
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+}
+
+.real-stories[data-animated] {
+	.real-stories__title {
+		// NOTE: Hidden at the start
+		opacity: 0;
+		transition: opacity var(--reveal-duration) ease-in-out;
+	}
+
+	.real-stories__scroller {
+		.swiper-slide {
+			--delay: calc(var(--reveal-delay) + var(--reveal-stagger) * 6);
+
+			// Media Queries
+			@include media-breakpoint-up(md) {
+				--delay: calc(var(--reveal-delay) + var(--reveal-stagger) * 6);
+
+				&:nth-child(1) {
+					--delay: calc(var(--reveal-delay) + var(--reveal-stagger) * 4.5);
+				}
+				&:nth-child(2) {
+					--delay: calc(var(--reveal-delay) + var(--reveal-stagger) * 5);
+				}
+				&:nth-child(3) {
+					--delay: calc(var(--reveal-delay) + var(--reveal-stagger) * 5.5);
+				}
+			}
+
+			.story {
+				// NOTE: Hidden at the start
+				transform: translate3d(100vw, 0, 0);
+				transition: transform var(--reveal-duration) var(--delay) cubic-bezier(0, 0, 0, 1);
+			}
+		}
+	
+	}
+
+	&.animated {
+		.reveal {
+			.real-stories__title {
+				opacity: 1;
+			}
+			.story {
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+}
+
+.about-growth[data-animated] {
+	.growth-yoy {
+		// NOTE: Hidden at the start
+		opacity: 0;
+		transition: opacity var(--reveal-duration) calc(var(--reveal-delay) + var(--reveal-stagger) * 2) ease-in-out;
+	}
+
+	.growth-container__stats {
+		// NOTE: Grow to final size
+		width: 0%;
+		transition: width calc(var(--reveal-duration) * 1.5) calc(var(--reveal-delay) + var(--reveal-stagger) * 2) ease-in-out;
+	}
+
+	&.animated {
+		.reveal {
+			.growth-yoy {
+				opacity: 1;
+			}
+			.growth-container__stats {
+				width: var(--width);
+			}
+		}
+	}
+}

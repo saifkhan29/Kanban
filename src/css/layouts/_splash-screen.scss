@@ -1,0 +1,223 @@
+.splash-screen {
+	--splash-in: 0.15s;
+	--splash-out: 0.3s;
+	--text-fade: 0.2s;
+
+	position: fixed;
+	display: flex;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: $white;
+	user-select: none;
+	z-index: 999;
+
+	aside {
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		> div {
+			width: 100%;
+			height: 100%;
+			padding: var(--section-outer-gutter);
+
+			// NOTE: Hidden & zoomed at the start
+			opacity: 0;
+			transform: scale(1.1);
+			transition: opacity var(--splash-out) ease-in-out, 
+						transform var(--splash-out) ease-in-out;
+			
+			.section-inner {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				border-radius: 0;
+				transition: border-radius var(--splash-in) ease-in-out;
+			}
+
+			&:not(:first-child) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
+
+	&__bg {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__text {
+		position: absolute;
+		display: flex;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: auto;
+		z-index: 1;
+		
+		// Media Queries
+		@include media-breakpoint-up(md) {
+			width: 80%;
+		}
+		
+		img {
+			width: 100%;
+			height: auto;
+		}
+		
+		// NOTE: Hidden at the start
+		opacity: 0;
+		transform: translate3d(-50%, calc(-50% + 5rem), 0);
+		transition: opacity var(--text-fade) calc(var(--splash-in) * 0.6) cubic-bezier(0, 0, 0, 1), 
+					transform var(--text-fade) calc(var(--splash-in) * 0.6) cubic-bezier(0, 0, 0, 1);
+	}
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 80%;
+		height: auto;
+		
+		// NOTE: Hidden at the start
+		opacity: 0;
+		transform: translate3d(-50%, calc(-50% + 5rem), 0);
+		transition: opacity var(--text-fade) calc(var(--splash-in) * 0.6) cubic-bezier(0, 0, 0, 1), 
+					transform var(--text-fade) calc(var(--splash-in) * 0.6) cubic-bezier(0, 0, 0, 1);
+		
+		// Media Queries
+		@include media-breakpoint-up(md) {
+			width: 89.2rem;
+		}
+	}
+
+	span {
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: $font-family-heading;
+		font-size: 7.5rem;
+		font-weight: 700;
+		letter-spacing: -0.306rem;
+		width: 100%;
+		color: $white;
+		z-index: 1;
+		
+		// Media Queries
+		@include media-breakpoint-up(lg) {
+			font-size: 9.7rem;
+			letter-spacing: -0.291rem;
+		}
+	}
+
+	// Animate slide 1
+	&.splash-screen--1 {
+		aside {
+			> div:nth-child(1) {
+				opacity: 1;
+				transform: scale(1);
+				transition-duration: var(--splash-in);
+
+				.section-inner {
+					border-radius: var(--section-radius);
+				}
+
+				.splash-screen__text {
+					opacity: 1;
+					transform: translate3d(-50%, -50%, 0);
+				}
+			}
+		}
+	}
+
+	// Hide slide 1 & animate slide 2
+	&.splash-screen--2 {
+		aside {
+			> div:nth-child(1) {
+				opacity: 0;
+				transform: scale(0.5);
+				transition-duration: var(--splash-out) !important;
+			}
+			> div:nth-child(2) {
+				opacity: 1;
+				transform: scale(1);
+				transition-duration: var(--splash-in);
+
+				.section-inner {
+					border-radius: var(--section-radius);
+				}
+
+				.splash-screen__text {
+					opacity: 1;
+					transform: translate3d(-50%, -50%, 0);
+				}
+			}
+		}
+	}
+
+	// Hide slide 2 & animate slide 3
+	&.splash-screen--3 {
+		aside {
+			> div:nth-child(2) {
+				opacity: 0;
+				transform: scale(0.5);
+				transition-duration: var(--splash-out) !important;
+			}
+			> div:nth-child(3) {
+				opacity: 1;
+				transform: scale(1);
+				transition-duration: var(--splash-in);
+
+				.section-inner {
+					border-radius: var(--section-radius);
+				}
+
+				.splash-screen__text {
+					opacity: 1;
+					transform: translate3d(-50%, -50%, 0);
+				}
+			}
+		}
+	}
+
+	// Hide slide 3 & animate slide 4
+	&.splash-screen--4 {
+		aside {
+			> div:nth-child(3) {
+				opacity: 0;
+				transform: scale(0.5);
+				transition-duration: var(--splash-out) !important;
+			}
+			> div:nth-child(4) {
+				opacity: 1;
+				transform: scale(1);
+				transition-duration: var(--splash-in);
+
+				.section-inner {
+					border-radius: var(--section-radius);
+				}
+
+				svg {
+					opacity: 1;
+					transform: translate3d(-50%, -50%, 0);
+				}
+			}
+		}
+	}
+}
