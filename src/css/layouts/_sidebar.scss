@@ -1,0 +1,155 @@
+.sidebar {
+    height: 100vh;
+    background-color: $white;
+    padding: 3.3rem 3.4rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $lines-light;
+
+    // Media Queries
+    @include media-breakpoint-up(md) {
+        width: 30rem;
+    }
+
+    .logo {
+        margin-bottom: 5.4rem;
+    }
+
+    .artboard {
+        flex: 1;
+
+        p {
+            margin-bottom: 2rem;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 1.6rem;
+            padding-bottom: 1.6rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+
+            &:hover {
+
+                svg {
+
+                    path {
+                        fill: $white;
+                    }
+                }
+
+                h4 {
+                    color: $white;
+                }
+
+                &::after {
+                    background-color: $primary;
+                }
+            }
+            
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -3.4rem;
+                width: calc(100% + 3.4rem);
+                height: 100%;
+                border-top-right-radius: 10rem;
+                border-bottom-right-radius: 10rem;
+                z-index: 1;
+            }
+
+            svg {
+                margin-right: 1.6rem;
+                z-index: 2;
+            }
+
+            h4 {
+                z-index: 2;
+                color: $medium-grey;
+            }
+        }
+
+        &-create {
+
+            h4 {
+                color: $primary;
+            }
+
+            svg {
+
+                path {
+                    fill: $primary;
+                }
+            }
+        }
+    }
+
+    &-theme-toggle {
+        background-color: $light-grey;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.6rem;
+
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+            
+            &-label {
+                background-color: $primary;
+                width: 4rem;
+                height: 2rem;
+                border-radius: 5rem;
+                position: relative;
+                padding: 0.5rem;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 2.3rem;
+
+                .ball {
+                    background-color: $white;
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    position: absolute;
+                    left: 0.4rem;
+                    top: 0.36rem;
+                    border-radius: 50%;
+                    transition: transform 0.2s linear;
+                }
+            }
+        }
+
+        .checkbox:checked + .checkbox-label .ball {
+            transform: translateX(1.8rem);
+        }
+
+        .light, .dark {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+    }
+
+    &-hide {
+        display: flex;
+        align-items: center;
+        margin-top: 2.2rem;
+        width: fit-content;
+        cursor: pointer;
+
+        h4 {
+            color: $medium-grey;
+        }
+
+        img {
+            margin-right: 1.6rem;
+        }
+    }
+} 

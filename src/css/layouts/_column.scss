@@ -1,0 +1,16 @@
+.column {
+    height: 100%;
+    
+    &-add {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        h3 {
+            color: $medium-grey;
+            margin-bottom: 3.2rem;
+        }
+    }
+}
