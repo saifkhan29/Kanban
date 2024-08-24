@@ -1,10 +1,12 @@
 .column {
     height: 100%;
     padding-top: 2.4rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     margin: 0 2.4rem 1.4rem 2.4rem;
-    width: calc(100vw - 30rem);
+    margin-left: 2.4rem;
+    width: calc(100vw - 31.2rem);
     overflow-x: scroll;
+    display: flex;
     
     &-add {
         display: flex;
@@ -19,8 +21,25 @@
         }
     }
 
+    &-add--fullheight {
+        min-width: 28rem;
+        max-width: 28rem;
+        background-color: $lines-light;
+        border-radius: 0.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        .h1 {
+            color: $medium-grey;
+            font-weight: 600;
+            letter-spacing: 0;
+        }
+    }
+
     &-items {
-        width: 100%;
+        // width: 100%;
         height: 100%;
         display: flex;
     }
