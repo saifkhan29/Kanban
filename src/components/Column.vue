@@ -131,7 +131,7 @@
                 </div>
             </div>
 
-            <div class="column-item">
+            <!-- <div class="column-item">
                 <div class="column-item-heading">
                     <span></span>
 
@@ -155,9 +155,9 @@
                         </aside>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="column-item">
+            <!-- <div class="column-item">
                 <div class="column-item-heading">
                     <span></span>
 
@@ -233,7 +233,7 @@
                         </aside>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
