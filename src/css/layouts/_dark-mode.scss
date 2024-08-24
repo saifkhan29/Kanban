@@ -1,0 +1,58 @@
+.dark-theme {
+
+    .sidebar {
+        background-color: $dark-grey;
+        border-right: 1px solid $lines-dark;
+    
+        .artboard {
+
+            p {
+                color: $medium-grey;
+            }
+        }
+    
+        &-theme-toggle {
+            background-color: $very-dark-grey;
+        }
+    } 
+
+    nav {
+        background-color: $dark-grey;
+        border-bottom: 1px solid $lines-dark;
+
+        h1 {
+            color: $white;
+        }
+    }
+
+    .container {
+        background-color: $very-dark-grey;
+    }
+
+    .column {
+        
+        &-add {
+    
+            h3 {
+                color: $medium-grey;
+            }
+        }
+    
+        &-add--fullheight {
+            background-color: $lines-light;
+
+            .h1 {
+                color: $medium-grey;
+            }
+        }
+    
+        &-item-task {
+            background-color: $white;
+    
+            p {
+                color: $medium-grey;
+                font-weight: 500;
+            }
+        }
+    }
+}

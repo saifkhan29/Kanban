@@ -20,6 +20,7 @@
 	border: 1px solid var(--btn-color);
 	padding: 1.5rem 7rem;
 	border-radius: 20rem;
+	border-color: transparent;
 	
 	// Media Queries
 	@include media-breakpoint-up(lg) {

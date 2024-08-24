@@ -1,6 +1,7 @@
 <template>
     <aside class="sidebar">
-              <img src="../assets/img/logo-dark.svg" alt="" class="logo">
+              <img v-if="!isDarkTheme" src="../assets/img/logo-dark.svg" alt="" class="logo">
+              <img v-else src="../assets/img/logo-light.svg" alt="" class="logo">
 
         <div class="artboard">
             <p>ALL BOARDS (3)</p>
@@ -33,7 +34,7 @@
         <div class="sidebar-theme-toggle">
             <img src="../assets/img/icon-light-theme.svg" alt="" class="light">
             
-            <input type="checkbox" class="checkbox" id="checkbox">
+            <input type="checkbox" class="checkbox" v-model="isDarkTheme" @change="toggleTheme" id="checkbox">
 
             <label for="checkbox" class="checkbox-label">
                 <span class="ball"></span>
@@ -54,7 +55,25 @@
 export default {
     name: 'Sidebar',
     data() {
+        return {
+        isDarkTheme: false, 
+        };
+    },
 
-    }
+    methods: {
+        toggleTheme() {
+
+            if (this.isDarkTheme) {
+                console.log('hello')
+                
+                document.body.classList.add('dark-theme');
+                document.body.classList.remove('light-theme');
+            } else {
+
+                document.body.classList.add('light-theme');
+                document.body.classList.remove('dark-theme');
+            }
+        }
+    },
 }
 </script>

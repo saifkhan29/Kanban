@@ -1,12 +1,12 @@
 <template>
     <div class="column">
-        <!-- <div class="column-add">
+        <div class="column-add">
             <h3>This board is empty. Create a new column to get started.</h3>
 
             <button class="btn">+ Add New Column</button>
-        </div> -->
+        </div>
         
-        <div class="column-items">
+        <!-- <div class="column-items">
             <div class="column-item">
                 <div class="column-item-heading">
                     <span></span>
@@ -259,7 +259,7 @@
 
         <div class="column-add--fullheight">
             <h2 class="h1">+ New Column</h2>
-        </div>
+        </div> -->
     </div>
 </template>
 
