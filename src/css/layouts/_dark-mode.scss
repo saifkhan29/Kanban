@@ -1,0 +1,65 @@
+.dark-theme {
+
+    .sidebar {
+        background-color: $dark-grey;
+        border-right: 1px solid $lines-dark;
+    
+        .artboard {
+
+            p {
+                color: $medium-grey;
+            }
+        }
+    
+        &-theme-toggle {
+            background-color: $very-dark-grey;
+        }
+    } 
+
+    nav {
+        background-color: $dark-grey;
+        border-bottom: 1px solid $lines-dark;
+
+        h1 {
+            color: $white;
+        }
+    }
+
+    .container {
+        background-color: $very-dark-grey;
+    }
+
+    .column {
+    
+        &-add--fullheight {
+            background-color: $dark-grey;
+        }
+    
+        &-item-task {
+            background-color: $dark-grey;
+    
+            h4 {
+                color: $white;
+            }
+        }
+
+        &-item-heading {
+
+            p {
+                color: $medium-grey;
+            }
+        }
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $lines-dark;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+    background-color: $lines-light;
+    }
+    
+    ::-webkit-scrollbar-track {
+    background-color: $very-dark-grey;
+    }
+}

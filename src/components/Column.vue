@@ -130,59 +130,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="column-item">
-                <div class="column-item-heading">
-                    <span></span>
-
-                    <p>TODO (4)</p>
-                </div>
-
-                <div class="column-item-tasks-container">
-                    <div class="column-item-task">
-                        <aside>
-                            <h4>QA and test all major user journeys</h4>
-
-                            <p>0 of 2 substasks</p>
-                        </aside>
-                    </div>
-
-                    <div class="column-item-task">
-                        <aside>
-                            <h4>QA and test all major user journeys</h4>
-
-                            <p>0 of 2 substasks</p>
-                        </aside>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- <div class="column-item">
-                <div class="column-item-heading">
-                    <span></span>
-
-                    <p>TODO (4)</p>
-                </div>
-
-                <div class="column-item-tasks-container">
-                    <div class="column-item-task">
-                        <aside>
-                            <h4>QA and test all major user journeys</h4>
-
-                            <p>0 of 2 substasks</p>
-                        </aside>
-                    </div>
-
-                    <div class="column-item-task">
-                        <aside>
-                            <h4>QA and test all major user journeys</h4>
-
-                            <p>0 of 2 substasks</p>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-
             <div class="column-item">
                 <div class="column-item-heading">
                     <span></span>
@@ -208,7 +155,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="column-item">
                 <div class="column-item-heading">
                     <span></span>
@@ -233,7 +179,86 @@
                         </aside>
                     </div>
                 </div>
-            </div> -->
+            </div>
+            <div class="column-item">
+                <div class="column-item-heading">
+                    <span></span>
+
+                    <p>TODO (4)</p>
+                </div>
+
+                <div class="column-item-tasks-container">
+                    <div class="column-item-task">
+                        <aside>
+                            <h4>QA and test all major user journeys</h4>
+
+                            <p>0 of 2 substasks</p>
+                        </aside>
+                    </div>
+
+                    <div class="column-item-task">
+                        <aside>
+                            <h4>QA and test all major user journeys</h4>
+
+                            <p>0 of 2 substasks</p>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div class="column-item">
+                <div class="column-item-heading">
+                    <span></span>
+
+                    <p>TODO (4)</p>
+                </div>
+
+                <div class="column-item-tasks-container">
+                    <div class="column-item-task">
+                        <aside>
+                            <h4>QA and test all major user journeys</h4>
+
+                            <p>0 of 2 substasks</p>
+                        </aside>
+                    </div>
+
+                    <div class="column-item-task">
+                        <aside>
+                            <h4>QA and test all major user journeys</h4>
+
+                            <p>0 of 2 substasks</p>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div class="column-item">
+                <div class="column-item-heading">
+                    <span></span>
+
+                    <p>TODO (4)</p>
+                </div>
+
+                <div class="column-item-tasks-container">
+                    <div class="column-item-task">
+                        <aside>
+                            <h4>QA and test all major user journeys</h4>
+
+                            <p>0 of 2 substasks</p>
+                        </aside>
+                    </div>
+
+                    <div class="column-item-task">
+                        <aside>
+                            <h4>QA and test all major user journeys</h4>
+
+                            <p>0 of 2 substasks</p>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column-add--fullheight">
+            <h2 class="h1">+ New Column</h2>
         </div>
     </div>
 </template>
