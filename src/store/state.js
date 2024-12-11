@@ -1,4 +1,5 @@
 export default {
     navbarHeight: 0,
-    boards: []
+    boards: [],
+    currentBoard: null
 };

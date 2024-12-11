@@ -5,6 +5,9 @@ export default {
   },
   ADD_BOARD(state, newBoard) {
     state.boards.push(newBoard)
+  },
+  CURRENT_BOARD(state, board) {
+    state.currentBoard = board;
   }
 };
   

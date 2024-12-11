@@ -13,5 +13,8 @@ export default {
     };
 
     commit('ADD_BOARD', newBoard)
+  },
+  setCurrentBoard({ commit }, board) {
+    commit('CURRENT_BOARD', board);
   }
 };
