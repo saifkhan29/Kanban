@@ -1,25 +1,58 @@
 <template>
-    <div>
-        <h3>Create New Board</h3>
-        {{ newBoardName }}
-        <input 
-            v-model="newBoardName" 
-            placeholder="Board Name" 
-            class="board-name-input" 
-        />
-        <div class="modal-buttons">
-            <button @click="submitBoardName">Create</button>
-            <button @click="closeModal">Cancel</button>
+    <div class="create-board" id="create-board">
+        <h3>Add New Board</h3>
+        {{ newBoardName }} 
+
+        <aside>
+            <label for="">Board Name</label>
+            <input 
+                v-model="newBoardName" 
+                placeholder="Board Name" 
+                class="board-name-input" 
+            />
+        </aside>
+
+        <aside class="column-input-container">
+            <label for="">Columns</label>
+            <div 
+            v-for="(column, index) in columns" 
+            :key="'column' + index"
+            class="column-input"
+            >
+            <input 
+                placeholder="Add Column" 
+                class="board-name-input" 
+                :id="'column' + index"
+                v-model="column.name"
+                type="text"
+            />
+
+            <span>
+                <img @click="deleteColumn(index)" src="../assets/img/icon-cross.svg" alt="">
+            </span>
+            </div>
+
+            <button @click="addColumn" class="btn btn--outline">+ Add New Column</button>
+        </aside>
+
+        <div class="btn-container">
+            <button class="btn" @click="submitBoardName">Create New Board</button>
+            <button class="btn--cancel" @click="closeModal">
+                <img src="../assets/img/icon-close.svg" alt="Close icon">
+            </button>
         </div>
     </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
     name: 'CreateBoardModal',
     data() {
         return {
             newBoardName: '', // Holds the new board name
+            columns: [{ name: '' }],
         };
     },
     methods: {
@@ -36,6 +69,12 @@ export default {
         },
         closeModal() {
             this.$emit('close'); // Close the modal when cancel is clicked
+        },
+        addColumn() {
+            this.columns.push({ name: '' })
+        },
+        deleteColumn(idx) {
+            this.columns.splice(idx, 1)
         }
     }
 };

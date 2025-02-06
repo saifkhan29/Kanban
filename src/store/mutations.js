@@ -1,3 +1,5 @@
+import { saveBoardsToLocalStorage } from "./localStorage";
+
 export default {
   SET_NAVBAR_HEIGHT(state, height) {
     state.navbarHeight = height;
@@ -5,6 +7,9 @@ export default {
   },
   ADD_BOARD(state, newBoard) {
     state.boards.push(newBoard)
+
+    // Save the board to local storage 
+    saveBoardsToLocalStorage(state.boards);
   },
   CURRENT_BOARD(state, board) {
     state.currentBoard = board;

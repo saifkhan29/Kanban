@@ -1,5 +1,7 @@
+import { loadBoardsFromLocalStorage } from "./localStorage";
+
 export default {
     navbarHeight: 0,
-    boards: [],
+    boards: loadBoardsFromLocalStorage(),
     currentBoard: null
 };
